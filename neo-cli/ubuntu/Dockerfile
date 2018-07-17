@@ -45,6 +45,6 @@ RUN curl -sSL --output neo-cli-ubuntu.zip $NEOCLI_DOWNLOAD_URL \
     && unzip neo-cli-ubuntu.zip -d /opt/ \
     && rm -rf neo-cli-ubuntu.zip
 
-EXPOSE 10333
+EXPOSE 10333 10332
 WORKDIR /opt/neo-cli
-ENTRYPOINT [ "dotnet", "neo-cli.dll" ]
+ENTRYPOINT [ "dotnet", "neo-cli.dll", "--rpc", "--log" ]

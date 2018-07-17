@@ -3,6 +3,8 @@
 FROM ubuntu:16.04
 MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ENV DOTNET_SDK_VERSION 2.0.0
 ENV DOTNET_SDK_RELEASE dotnet-sdk-2.0.0-linux-x64.tar.gz
 ENV DOTNET_SDK_DOWNLOAD_URL https://download.microsoft.com/download/1/B/4/1B4DE605-8378-47A5-B01B-2C79D6C55519/$DOTNET_SDK_RELEASE

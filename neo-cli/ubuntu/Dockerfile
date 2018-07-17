@@ -6,6 +6,9 @@ MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
 ENV DOTNET_SDK_VERSION 2.0.0
 ENV DOTNET_SDK_RELEASE dotnet-sdk-2.0.0-linux-x64.tar.gz
 ENV DOTNET_SDK_DOWNLOAD_URL https://download.microsoft.com/download/1/B/4/1B4DE605-8378-47A5-B01B-2C79D6C55519/$DOTNET_SDK_RELEASE
+# Disable dotnet usage information collection
+# https://docs.microsoft.com/en-us/dotnet/core/tools/telemetry#behavior
+ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 ENV PATH="/opt/dotnet:${PATH}"
 
 ENV NEOCLI_VERSION 2.7.4

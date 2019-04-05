@@ -5,20 +5,20 @@ MAINTAINER Jonatan <jonatan.blockchain@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV DOTNET_SDK_VERSION 2.0.0
-ENV DOTNET_SDK_RELEASE dotnet-sdk-2.0.0-linux-x64.tar.gz
-ENV DOTNET_SDK_DOWNLOAD_URL https://download.microsoft.com/download/1/B/4/1B4DE605-8378-47A5-B01B-2C79D6C55519/$DOTNET_SDK_RELEASE
+ARG DOTNET_SDK_VERSION=2.0.0
+ARG DOTNET_SDK_RELEASE=dotnet-sdk-2.0.0-linux-x64.tar.gz
+ARG DOTNET_SDK_DOWNLOAD_URL=https://download.microsoft.com/download/1/B/4/1B4DE605-8378-47A5-B01B-2C79D6C55519/$DOTNET_SDK_RELEASE
 # Disable dotnet usage information collection
 # https://docs.microsoft.com/en-us/dotnet/core/tools/telemetry#behavior
 ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 ENV PATH="/opt/dotnet:${PATH}"
 
-ENV NEOCLI_VERSION 2.10.0
-ENV NEOCLI_SHA256 F3D24E3E67D59C786EF12DD9F25371EA9F56AE348B19A720819256C7824E1456
-ENV NEOCLI_RELEASE neo-cli-linux-x64.zip
-ENV NEOCLI_DOWNLOAD_URL https://github.com/neo-project/neo-cli/releases/download/v$NEOCLI_VERSION/$NEOCLI_RELEASE
-ENV NEO_APPLOGS_DOWNLOAD_URL https://github.com/neo-project/neo-plugins/releases/download/v$NEOCLI_VERSION/ApplicationLogs.zip
-ENV NEO_IMPORTBLOCKS_DOWNLOAD_URL https://github.com/neo-project/neo-plugins/releases/download/v$NEOCLI_VERSION/ImportBlocks.zip
+ARG NEOCLI_VERSION=2.10.0
+ARG NEOCLI_SHA256=F3D24E3E67D59C786EF12DD9F25371EA9F56AE348B19A720819256C7824E1456
+ARG NEOCLI_RELEASE=neo-cli-linux-x64.zip
+ARG NEOCLI_DOWNLOAD_URL=https://github.com/neo-project/neo-cli/releases/download/v$NEOCLI_VERSION/$NEOCLI_RELEASE
+ARG NEO_APPLOGS_DOWNLOAD_URL=https://github.com/neo-project/neo-plugins/releases/download/v$NEOCLI_VERSION/ApplicationLogs.zip
+ARG NEO_IMPORTBLOCKS_DOWNLOAD_URL=https://github.com/neo-project/neo-plugins/releases/download/v$NEOCLI_VERSION/ImportBlocks.zip
 
 RUN apt-get update && \
     apt-get -y install unzip dialog curl apt-transport-https ca-certificates && \

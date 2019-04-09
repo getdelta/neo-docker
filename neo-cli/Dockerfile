@@ -55,6 +55,8 @@ RUN curl -sSL --output neo-importblocks.zip $NEO_IMPORTBLOCKS_DOWNLOAD_URL \
     && unzip neo-importblocks.zip -d /opt/neo-cli/ \
     && rm -rf neo-importblocks.zip
 
+COPY config.json /opt/neo-cli/config.json
+
 EXPOSE 10333 10332
 WORKDIR /opt/neo-cli
 ENTRYPOINT [ "dotnet", "neo-cli.dll", "--rpc", "--log" ]
